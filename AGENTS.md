@@ -2,7 +2,7 @@
 
 ## 1. Mission
 
-Build and maintain Movie Vault exactly according to the repository specifications. Treat `PRD.md`, `TRD.md`, `ARCHITECTURE.md`, `DATABASE.md`, `SECURITY.md`, `DESIGN_SYSTEM.md`, `CODE_STYLE.md`, and `TESTING.md` as source-of-truth documents.
+Build and maintain Movie Vault exactly according to the repository specifications. Treat `docs/PRD.md`, `docs/TRD.md`, `docs/ARCHITECTURE.md`, `docs/DATABASE.md`, `docs/SECURITY.md`, `docs/DESIGN_SYSTEM.md`, `docs/CODE_STYLE.md`, and `docs/TESTING.md` as source-of-truth documents.
 
 Do not simplify away requirements merely because a faster CRUD implementation is possible.
 
@@ -135,7 +135,7 @@ Do not invent new action names if an existing one fits.
 
 ## 8. UI Rules
 
-- Follow `DESIGN_SYSTEM.md`.
+- Follow `docs/DESIGN_SYSTEM.md`.
 - Dark cinematic visual language.
 - Poster-first.
 - No generic SaaS dashboard aesthetic.

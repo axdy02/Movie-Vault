@@ -8,7 +8,7 @@ Use a personal GitHub repository, Vercel Hobby where your project is eligible, S
 
 ## 1. Put the source on GitHub
 
-The source repository is [axdy02/Movie-Vault](https://github.com/axdy02/Movie-Vault), with private visibility and `main` as the default branch. To work from a fresh checkout with access to that repository:
+The source repository is [axdy02/Movie-Vault](https://github.com/axdy02/Movie-Vault), with `main` as the default branch. To work from a fresh checkout:
 
 ```powershell
 git clone https://github.com/axdy02/Movie-Vault.git

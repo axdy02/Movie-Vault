@@ -4,17 +4,19 @@ A cinematic shared movie library built with Next.js, Supabase and TMDB. Everyone
 
 Source repository: [axdy02/Movie-Vault](https://github.com/axdy02/Movie-Vault).
 
-## Documents
+## Project structure
 
-- `PRD.md` — Product requirements and exact feature scope.
-- `TRD.md` — Technical requirements and approved implementation stack.
-- `ARCHITECTURE.md` — System architecture, data flow, rendering, caching, write paths.
-- `DATABASE.md` — Postgres/Supabase schema and data rules.
-- `SECURITY.md` — Auth, RLS, secrets, API, audit and public-demo security requirements.
-- `DESIGN_SYSTEM.md` — Visual language, tokens, components, responsive behavior and accessibility.
-- `CODE_STYLE.md` — TypeScript, Next.js, naming, data access and coding conventions.
-- `TESTING.md` — Unit, integration, E2E, RLS, audit and regression requirements.
-- `AGENTS.md` — Source-of-truth instructions for Codex/other coding agents.
+```text
+docs/       Specifications, setup, deployment and verification guides
+src/        Application pages, components, features and server code
+public/     Static assets
+supabase/   Database migrations, provisioning and database tooling
+tests/      Unit, component, database and browser tests
+scripts/    Development and verification scripts
+.github/    GitHub Actions
+```
+
+See the [documentation index](docs/README.md) for the complete specification pack and guides. [AGENTS.md](AGENTS.md) stays at the root for coding agents; framework and tool configuration files also stay at the root so standard commands work.
 
 ## Core Product in One Sentence
 
@@ -30,7 +32,7 @@ Copy-Item .env.example .env.local
 npm run dev
 ```
 
-Open `http://localhost:3000`. Without service credentials, the app renders its real public shell with an explicit setup state and empty vault. It does not create fake movies, fake users, or localStorage persistence. Follow [SETUP.md](SETUP.md) to connect Supabase and TMDB before testing real saves and editor login.
+Open `http://localhost:3000`. Without service credentials, the app renders its real public shell with an explicit setup state and empty vault. It does not create fake movies, fake users, or localStorage persistence. Follow [SETUP.md](docs/SETUP.md) to connect Supabase and TMDB before testing real saves and editor login.
 
 ## Engineering checks
 
@@ -44,14 +46,14 @@ npx playwright install chromium
 npm run test:e2e
 ```
 
-Database integration tests execute the SQL migration in PGlite, an actual PostgreSQL engine, with anonymous, authenticated, service and administrator roles. They test database grants, RLS, transaction behavior and audits without mocking authorization. PGlite is a development dependency only. Supabase Auth and the production gateway still need the separate live acceptance checks described in [DEPLOYMENT.md](DEPLOYMENT.md).
+Database integration tests execute the SQL migration in PGlite, an actual PostgreSQL engine, with anonymous, authenticated, service and administrator roles. They test database grants, RLS, transaction behavior and audits without mocking authorization. PGlite is a development dependency only. Supabase Auth and the production gateway still need the separate live acceptance checks described in [DEPLOYMENT.md](docs/DEPLOYMENT.md).
 
 ## Implementation reference
 
-- [REQUIREMENTS.md](REQUIREMENTS.md): mandatory V1 requirements mapped to implementation and verification.
-- [IMPLEMENTATION_STATUS.md](IMPLEMENTATION_STATUS.md): current implementation, executed checks and outstanding external verification.
-- [SETUP.md](SETUP.md): beginner-friendly service setup and local development.
-- [DEPLOYMENT.md](DEPLOYMENT.md): GitHub/Vercel release and rollback process.
+- [REQUIREMENTS.md](docs/REQUIREMENTS.md): mandatory V1 requirements mapped to implementation and verification.
+- [IMPLEMENTATION_STATUS.md](docs/IMPLEMENTATION_STATUS.md): current implementation, executed checks and outstanding external verification.
+- [SETUP.md](docs/SETUP.md): beginner-friendly service setup and local development.
+- [DEPLOYMENT.md](docs/DEPLOYMENT.md): GitHub/Vercel release and rollback process.
 - `supabase/migrations/`: reproducible PostgreSQL schema and security boundaries.
 - `supabase/provision-editors.sql`: trusted administrator-only provisioning template.
 - `src/types/database.ts`: generated schema types; see setup guide for regeneration.
