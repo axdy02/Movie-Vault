@@ -1,0 +1,16 @@
+node_modules
+.next
+package-lock.json
+playwright-report
+test-results
+coverage
+PRD.md
+TRD.md
+DATABASE.md
+DESIGN_SYSTEM.md
+SECURITY.md
+ARCHITECTURE.md
+CODE_STYLE.md
+TESTING.md
+AGENTS.md
+next-env.d.ts
